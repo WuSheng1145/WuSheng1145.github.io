@@ -21,7 +21,7 @@ title                    : "Runfeng Zhou"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Runfeng Zhou"
-description              : "An oier , record my daily life and write problem explanations"
+description              : "An oier,record my daily life and write problem explanations"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
