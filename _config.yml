@@ -17,7 +17,7 @@ minimal_mistakes_skin    : "sunrise" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "zh-CN"
 direction                : # "ltr" (default), "rtl" # set the direction of the page
-title                    : "Runfeng Zhou"
+title                    : "Runfeng's Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Runfeng Zhou"
@@ -115,7 +115,7 @@ analytics:
 # Site Author
 author:
   name             : "Runfeng Zhou"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : # "/assets/images/bio-photo.jpg"
   bio              : "一名高中 **OIer**，记录算法题解与日常。"
   location         : "China"
   email            : "2031068531@qq.com"
