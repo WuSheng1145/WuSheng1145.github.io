@@ -13,27 +13,3 @@ body {
   background-attachment: fixed;
 }
 
-/* 导航栏毛玻璃 */
-.masthead {
-  background: rgba(255, 255, 255, 0.65) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
-/* 文章卡片圆角阴影（有文章后才看得到） */
-.archive__item {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(4px);
-  border-radius: 12px;
-  padding: 1.5em;
-  margin-bottom: 1em;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: all 0.2s ease;
-}
-
-.archive__item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
