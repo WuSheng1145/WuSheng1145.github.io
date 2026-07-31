@@ -8,3 +8,147 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+/* ========== 浅色主题自定义美化 ========== */
+
+/* 1. 代码块美化 - 类似 GitHub 浅色代码风格 */
+div.highlighter-rouge, figure.highlight {
+  background: #f6f8fa;
+  border-radius: 8px;
+  border: 1px solid #d0d7de;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.highlight pre {
+  background: transparent;
+}
+
+.highlight .k { color: #cf222e; }   /* keyword */
+.highlight .s { color: #0a3069; }   /* string */
+.highlight .mi { color: #0550ae; }  /* number */
+.highlight .c { color: #6e7781; }   /* comment */
+.highlight .n { color: #24292f; }   /* name */
+.highlight .o { color: #0550ae; }   /* operator */
+
+/* 2. 文章卡片悬浮效果 */
+.archive__item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.archive__item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* 3. 导航栏毛玻璃效果（浅色版） */
+.masthead {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* 4. 侧边栏头像动画 */
+.author__avatar img {
+  border-radius: 50%;
+  border: 3px solid #0969da;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.author__avatar img:hover {
+  transform: scale(1.05);
+  border-color: #1f6feb;
+  box-shadow: 0 4px 16px rgba(9, 105, 218, 0.2);
+}
+
+/* 5. 链接颜色（蓝色系） */
+a {
+  color: #0969da;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #1f6feb;
+}
+
+/* 6. 引用块美化 */
+blockquote {
+  border-left: 4px solid #0969da;
+  background: rgba(9, 105, 218, 0.04);
+  border-radius: 0 8px 8px 0;
+  padding: 1em 1.5em;
+  color: #444;
+}
+
+/* 7. 标签云美化 */
+.taxonomy__index a {
+  background: rgba(9, 105, 218, 0.08);
+  border-radius: 20px;
+  padding: 4px 12px;
+  margin: 4px;
+  display: inline-block;
+  transition: all 0.2s ease;
+  color: #0969da;
+}
+
+.taxonomy__index a:hover {
+  background: rgba(9, 105, 218, 0.18);
+  transform: scale(1.05);
+  color: #1f6feb;
+}
+
+/* 8. 按钮美化 */
+.btn {
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn--primary {
+  background-color: #0969da;
+  border-color: #0969da;
+}
+
+.btn--primary:hover {
+  background-color: #1f6feb;
+  border-color: #1f6feb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(9, 105, 218, 0.25);
+}
+
+/* 9. 文章标题更醒目 */
+.page__title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* 10. 表格美化 */
+table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+th {
+  background: #f6f8fa;
+  font-weight: 600;
+}
+
+td, th {
+  border-color: #d0d7de;
+}
+
+/* 11. 返回顶部按钮 */
+.greedy-nav__toggle:hover {
+  background: rgba(9, 105, 218, 0.1);
+}
+
+/* 12. 搜索框美化 */
+.search__toggle {
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.search__toggle:hover {
+  background: rgba(9, 105, 218, 0.1);
+}
