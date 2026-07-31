@@ -438,3 +438,21 @@ td {
   margin: 0 !important;
   padding: 0 !important;
 }
+
+/* ========== 导航栏圆角胶囊 ========== */
+
+.masthead {
+  border-radius: 16px !important;
+  margin: 12px auto !important;
+  max-width: 1100px !important;
+  width: calc(100% - 48px) !important;
+  position: relative !important;
+  left: 0 !important;
+  right: 0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.masthead__inner-wrap {
+  border-radius: 16px !important;
+  padding: 8px 24px !important;
+}
