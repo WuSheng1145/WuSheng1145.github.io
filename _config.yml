@@ -122,7 +122,7 @@ author:
   # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
   links:
     - label: "bilibili"
-      icon: "fas fa-fw fa-bilibili"
+      icon: "fas fa-fw fa-square-bilibili"
       url: "https://space.bilibili.com/1498527614"
     - label: "Website"
       icon: "fas fa-fw fa-link"
