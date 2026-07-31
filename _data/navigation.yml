@@ -2,7 +2,7 @@
 main:
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-   - title: "帖子Posts"
+   - title: "年份By years"
      url: /year-archive/
    - title: "分类Categories"
      url: /categories/
