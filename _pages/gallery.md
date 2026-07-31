@@ -1,6 +1,6 @@
 ---
 title: "画廊 Gallery"
-layout: gallery
+layout: single
 permalink: /gallery/
 author_profile: true
 ---
