@@ -8,147 +8,336 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-/* ========== 浅色主题自定义美化 ========== */
 
-/* 1. 代码块美化 - 类似 GitHub 浅色代码风格 */
-div.highlighter-rouge, figure.highlight {
-  background: #f6f8fa;
-  border-radius: 8px;
-  border: 1px solid #d0d7de;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+/* ========== 全局背景：纯白，去掉发灰感 ========== */
+body {
+  background: #ffffff;
+  color: #24292f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
-.highlight pre {
-  background: transparent;
+/* ========== 页面容器：限制最大宽度，居中，更有杂志感 ========== */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.highlight .k { color: #cf222e; }   /* keyword */
-.highlight .s { color: #0a3069; }   /* string */
-.highlight .mi { color: #0550ae; }  /* number */
-.highlight .c { color: #6e7781; }   /* comment */
-.highlight .n { color: #24292f; }   /* name */
-.highlight .o { color: #0550ae; }   /* operator */
-
-/* 2. 文章卡片悬浮效果 */
-.archive__item {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border-radius: 10px;
-  padding: 12px;
-}
-
-.archive__item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-}
-
-/* 3. 导航栏毛玻璃效果（浅色版） */
+/* ========== 导航栏：纯白 + 底部细线 + 轻微阴影 ========== */
 .masthead {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
-/* 4. 侧边栏头像动画 */
+.masthead__inner-wrap {
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.greedy-nav a {
+  color: #374151;
+  font-weight: 500;
+  font-size: 0.95em;
+  transition: color 0.2s;
+}
+
+.greedy-nav a:hover {
+  color: #2563eb;
+}
+
+/* 网站标题 */
+.site-title {
+  font-weight: 700;
+  font-size: 1.3em;
+  color: #111827;
+}
+
+/* ========== 侧边栏作者卡片 ========== */
+.sidebar {
+  padding-right: 20px;
+}
+
+.author__avatar {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
 .author__avatar img {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  border: 3px solid #0969da;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid #e5e7eb;
+  padding: 3px;
+  background: #fff;
+  transition: all 0.3s ease;
 }
 
 .author__avatar img:hover {
-  transform: scale(1.05);
-  border-color: #1f6feb;
-  box-shadow: 0 4px 16px rgba(9, 105, 218, 0.2);
+  border-color: #2563eb;
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.15);
 }
 
-/* 5. 链接颜色（蓝色系） */
-a {
-  color: #0969da;
-  transition: color 0.2s ease;
+.author__content {
+  text-align: center;
 }
 
-a:hover {
-  color: #1f6feb;
+.author__name {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.3em;
 }
 
-/* 6. 引用块美化 */
+.author__bio {
+  font-size: 0.9em;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.author__urls-wrapper {
+  text-align: center;
+}
+
+.author__urls a {
+  color: #4b5563;
+  font-size: 0.9em;
+  transition: color 0.2s;
+}
+
+.author__urls a:hover {
+  color: #2563eb;
+}
+
+.author__urls .fa,
+.author__urls .fab,
+.author__urls .fas {
+  color: #9ca3af;
+  margin-right: 6px;
+}
+
+/* ========== 文章列表卡片 ========== */
+.archive__item {
+  background: #ffffff;
+  border: 1px solid #f3f4f6;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: all 0.25s ease;
+}
+
+.archive__item:hover {
+  border-color: #e5e7eb;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+
+.archive__item-title {
+  font-size: 1.4em;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.archive__item-title a {
+  color: #111827;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.archive__item-title a:hover {
+  color: #2563eb;
+}
+
+.archive__item-excerpt {
+  color: #6b7280;
+  font-size: 0.95em;
+  line-height: 1.7;
+}
+
+.page__meta {
+  font-size: 0.85em;
+  color: #9ca3af;
+  margin-top: 10px;
+}
+
+.page__meta .fa,
+.page__meta .far,
+.page__meta .fas {
+  margin-right: 4px;
+}
+
+/* ========== 分页按钮 ========== */
+.pagination {
+  margin-top: 2em;
+}
+
+.pagination a {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: #374151;
+  padding: 8px 16px;
+  transition: all 0.2s;
+}
+
+.pagination a:hover {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.pagination--pager {
+  border-radius: 8px;
+}
+
+/* ========== 代码块：GitHub 风格 ========== */
+div.highlighter-rouge,
+figure.highlight {
+  background: #f6f8fa;
+  border-radius: 10px;
+  border: 1px solid #d0d7de;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  margin: 1.5em 0;
+}
+
+div.highlighter-rouge pre,
+figure.highlight pre {
+  background: transparent;
+  padding: 16px;
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.highlight .k  { color: #cf222e; }  /* keyword */
+.highlight .s  { color: #0a3069; }  /* string */
+.highlight .mi { color: #0550ae; }  /* number */
+.highlight .c  { color: #6e7781; }  /* comment */
+.highlight .n  { color: #24292f; }  /* name */
+.highlight .o  { color: #0550ae; }  /* operator */
+.highlight .nb { color: #953800; }  /* built-in */
+.highlight .nt { color: #116329; }  /* tag */
+
+/* ========== 引用块 ========== */
 blockquote {
-  border-left: 4px solid #0969da;
-  background: rgba(9, 105, 218, 0.04);
+  border-left: 4px solid #2563eb;
+  background: #f8fafc;
   border-radius: 0 8px 8px 0;
   padding: 1em 1.5em;
-  color: #444;
+  color: #4b5563;
+  font-style: normal;
 }
 
-/* 7. 标签云美化 */
-.taxonomy__index a {
-  background: rgba(9, 105, 218, 0.08);
-  border-radius: 20px;
-  padding: 4px 12px;
-  margin: 4px;
-  display: inline-block;
-  transition: all 0.2s ease;
-  color: #0969da;
-}
-
-.taxonomy__index a:hover {
-  background: rgba(9, 105, 218, 0.18);
-  transform: scale(1.05);
-  color: #1f6feb;
-}
-
-/* 8. 按钮美化 */
-.btn {
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
-
-.btn--primary {
-  background-color: #0969da;
-  border-color: #0969da;
-}
-
-.btn--primary:hover {
-  background-color: #1f6feb;
-  border-color: #1f6feb;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(9, 105, 218, 0.25);
-}
-
-/* 9. 文章标题更醒目 */
-.page__title {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-/* 10. 表格美化 */
+/* ========== 表格 ========== */
 table {
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 th {
-  background: #f6f8fa;
+  background: #f9fafb;
   font-weight: 600;
+  color: #374151;
+  border-bottom: 2px solid #e5e7eb;
 }
 
-td, th {
-  border-color: #d0d7de;
+td {
+  border-bottom: 1px solid #f3f4f6;
 }
 
-/* 11. 返回顶部按钮 */
-.greedy-nav__toggle:hover {
-  background: rgba(9, 105, 218, 0.1);
+/* ========== 标签云 ========== */
+.taxonomy__index a {
+  background: #f3f4f6;
+  border-radius: 20px;
+  padding: 5px 14px;
+  margin: 4px;
+  display: inline-block;
+  font-size: 0.85em;
+  color: #4b5563;
+  transition: all 0.2s;
+  text-decoration: none;
 }
 
-/* 12. 搜索框美化 */
+.taxonomy__index a:hover {
+  background: #2563eb;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ========== Footer：深色优雅版 ========== */
+.page__footer {
+  background: #111827;
+  color: #9ca3af;
+  margin-top: 4em;
+  padding: 2.5em 0;
+}
+
+.page__footer a {
+  color: #d1d5db;
+  transition: color 0.2s;
+}
+
+.page__footer a:hover {
+  color: #60a5fa;
+}
+
+.page__footer-copyright {
+  font-size: 0.9em;
+  color: #6b7280;
+}
+
+/* ========== 按钮 ========== */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn--primary {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.btn--primary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* ========== 搜索框 ========== */
 .search__toggle {
+  color: #6b7280;
   border-radius: 6px;
-  transition: background 0.2s;
+  padding: 6px;
+  transition: all 0.2s;
 }
 
 .search__toggle:hover {
-  background: rgba(9, 105, 218, 0.1);
+  color: #2563eb;
+  background: #eff6ff;
 }
+
+/* ========== 返回顶部 ========== */
+.greedy-nav__toggle:hover {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+/* ========== 响应式：移动端优化 ========== */
+@media (max-width: 768px) {
+  .archive__item {
+    padding: 16px;
+  }
+  
+  .author__avatar img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+
