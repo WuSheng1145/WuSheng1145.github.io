@@ -116,7 +116,7 @@ analytics:
 author:
   name             : "Runfeng Zhou"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an senior school **Oier**,recroding my daily life"
+  bio              : "一名高中 **OIer**，记录算法题解与日常。"
   location         : "China"
   email            : "2031068531@qq.com"
   # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
@@ -124,9 +124,9 @@ author:
     - label: "bilibili"
       icon: "fab fa-fw fa-bilibili"
       url: "https://space.bilibili.com/1498527614"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://WuSheng1145.github.io"
+    #- label: "Website"
+      #icon: "fas fa-fw fa-link"
+      #url: "https://WuSheng1145.github.io"
     - label: "Twitter"
       icon: "fab fa-fw fa-square-x-twitter"
       # url: "https://twitter.com/"
