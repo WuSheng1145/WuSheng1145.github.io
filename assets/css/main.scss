@@ -410,11 +410,12 @@ td {
   background: rgba(37, 99, 235, 0.08);
 }
 
-/* ========== 压缩 Footer 高度 ========== */
+/* ========== 强力压缩 Footer ========== */
 
 .page__footer {
-  margin-top: 3em;
-  padding: 1.2em 0;
+  margin-top: 2em !important;
+  padding: 0.8em 0 !important;
+  background: #111827;
 }
 
 .page__footer footer {
@@ -424,9 +425,16 @@ td {
 }
 
 .page__footer-follow {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em !important;
+}
+
+.page__footer-follow li {
+  display: inline-block;
+  margin-right: 12px;
 }
 
 .page__footer-copyright {
-  font-size: 0.85em;
+  font-size: 0.8em !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
