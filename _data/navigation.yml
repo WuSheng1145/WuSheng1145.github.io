@@ -2,11 +2,11 @@
 main:
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-   - title: "帖子Posts"
+   - title: "文章归档"
      url: /year-archive/
-   - title: "分类Categories"
+   - title: "分类"
      url: /categories/
-   - title: "关于About"
+   - title: "关于我"
      url: /about/
-   - title: "画廊Gallery"
+   - title: "画廊"
      url: /gallery/
