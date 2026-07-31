@@ -7,9 +7,4 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
-/* 页面背景渐变 */
-body {
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
-  background-attachment: fixed;
-}
 
