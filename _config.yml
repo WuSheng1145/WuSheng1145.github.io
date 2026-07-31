@@ -118,7 +118,7 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an senior school **Oier**,recroding my daily life"
   location         : "China"
-  email            :2031068531@qq.com
+  email            : "2031068531@qq.com"
   # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
   links:
     - label: "Email"
