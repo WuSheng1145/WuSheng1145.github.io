@@ -24,3 +24,5 @@ int main() {
     cout << "Hello, World!" << endl;
     return 0;
 }
+```
+> 任何成功都有一个微不足道的开始！
