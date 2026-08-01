@@ -10,12 +10,21 @@ search: false
 
 
 /* ========== 全局背景：纯白，去掉发灰感 ========== */
-body {
+/* body {
   background: #faf9f7;
   color: #24292f;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
+*/
 
+body {
+  background-image: url('/assets/images/bg.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* 不需要额外遮罩，因为图本身很淡 */
 /* ========== 页面容器：限制最大宽度，居中，更有杂志感 ========== */
 .page {
   max-width: 1200px;
