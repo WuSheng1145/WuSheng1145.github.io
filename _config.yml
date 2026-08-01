@@ -115,7 +115,7 @@ analytics:
 # Site Author
 author:
   name             : "Runfeng Zhou"
-  avatar           : # "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/avatar.png"
   bio              : "一名高中 **OIer**，记录算法题解与日常。"
   location         : "China"
   email            : "2031068531@qq.com"
