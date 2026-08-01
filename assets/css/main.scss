@@ -1,137 +1,85 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 search: false
 ---
 
 @charset "utf-8";
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
 
-
-/* ========== 全局背景：纯白，去掉发灰感 ========== */
-/* body {
-  background: #faf9f7;
-  color: #24292f;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-}
-*/
-/*======bg.png======*/
-/* body {
-  background-image: url('/assets/images/bg.png');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-}
-*/
-/* 不需要额外遮罩，因为图本身很淡 */
+/* ========== 全局背景 ========== */
 body {
   background: linear-gradient(160deg, #e0f2fe 0%, #f0f9ff 30%, #f8fafc 70%, #f1f5f9 100%);
   background-attachment: fixed;
   color: #24292f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
-/* ========== 页面容器：限制最大宽度，居中，更有杂志感 ========== */
+/* ========== 页面容器 ========== */
 .page {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* ========== 导航栏：纯白 + 底部细线 + 轻微阴影 ========== */
+/* ========== 导航栏：圆角胶囊 + 毛玻璃 ========== */
 .masthead {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e5e7eb;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 16px !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  margin: 12px auto !important;
+  max-width: 1100px !important;
+  width: calc(100% - 48px) !important;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .masthead__inner-wrap {
-  max-width: 1200px;
-  padding: 0 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 24px !important;
 }
 
 .greedy-nav a {
-  color: #374151;
+  color: #4b5563;
   font-weight: 500;
   font-size: 0.95em;
-  transition: color 0.2s;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
 }
 
 .greedy-nav a:hover {
   color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
 }
 
-/* 网站标题 */
+.greedy-nav .visible-links a.active {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.1);
+  font-weight: 600;
+}
+
 .site-title {
   font-weight: 700;
-  font-size: 1.3em;
+  font-size: 1.25em;
   color: #111827;
+  letter-spacing: -0.02em;
 }
 
-/* ========== 侧边栏作者卡片 ========== */
-.sidebar {
-  padding-right: 20px;
-}
-
-.author__avatar {
-  text-align: center;
-  margin-bottom: 1em;
-}
-
-.author__avatar img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px solid #e5e7eb;
-  padding: 3px;
-  background: #fff;
-  transition: all 0.3s ease;
-}
-
-.author__avatar img:hover {
-  border-color: #2563eb;
-  transform: scale(1.03);
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.15);
-}
-
-.author__content {
-  text-align: center;
-}
-
-.author__name {
-  font-size: 1.3em;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 0.3em;
-}
-
-.author__bio {
-  font-size: 0.9em;
+.search__toggle {
   color: #6b7280;
-  line-height: 1.6;
+  border-radius: 8px;
+  padding: 8px;
+  transition: all 0.2s;
 }
 
-.author__urls-wrapper {
-  text-align: center;
-}
-
-.author__urls a {
-  color: #4b5563;
-  font-size: 0.9em;
-  transition: color 0.2s;
-}
-
-.author__urls a:hover {
+.search__toggle:hover {
   color: #2563eb;
-}
-
-.author__urls .fa,
-.author__urls .fab,
-.author__urls .fas {
-  color: #9ca3af;
-  margin-right: 6px;
+  background: rgba(37, 99, 235, 0.08);
 }
 
 /* ========== 文章列表卡片 ========== */
@@ -226,14 +174,14 @@ figure.highlight pre {
   line-height: 1.6;
 }
 
-.highlight .k  { color: #cf222e; }  /* keyword */
-.highlight .s  { color: #0a3069; }  /* string */
-.highlight .mi { color: #0550ae; }  /* number */
-.highlight .c  { color: #6e7781; }  /* comment */
-.highlight .n  { color: #24292f; }  /* name */
-.highlight .o  { color: #0550ae; }  /* operator */
-.highlight .nb { color: #953800; }  /* built-in */
-.highlight .nt { color: #116329; }  /* tag */
+.highlight .k  { color: #cf222e; }
+.highlight .s  { color: #0a3069; }
+.highlight .mi { color: #0550ae; }
+.highlight .c  { color: #6e7781; }
+.highlight .n  { color: #24292f; }
+.highlight .o  { color: #0550ae; }
+.highlight .nb { color: #953800; }
+.highlight .nt { color: #116329; }
 
 /* ========== 引用块 ========== */
 blockquote {
@@ -283,154 +231,12 @@ td {
   transform: scale(1.05);
 }
 
-/* ========== Footer：深色优雅版 ========== */
+/* ========== Footer 压缩 ========== */
 .page__footer {
   background: #111827;
   color: #9ca3af;
-  margin-top: 4em;
-  padding: 2.5em 0;
-}
-
-.page__footer a {
-  color: #d1d5db;
-  transition: color 0.2s;
-}
-
-.page__footer a:hover {
-  color: #60a5fa;
-}
-
-.page__footer-copyright {
-  font-size: 0.9em;
-  color: #6b7280;
-}
-
-/* ========== 按钮 ========== */
-.btn {
-  border-radius: 8px;
-  font-weight: 500;
-  transition: all 0.2s;
-}
-
-.btn--primary {
-  background: #2563eb;
-  border-color: #2563eb;
-}
-
-.btn--primary:hover {
-  background: #1d4ed8;
-  border-color: #1d4ed8;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-}
-
-/* ========== 搜索框 ========== */
-.search__toggle {
-  color: #6b7280;
-  border-radius: 6px;
-  padding: 6px;
-  transition: all 0.2s;
-}
-
-.search__toggle:hover {
-  color: #2563eb;
-  background: #eff6ff;
-}
-
-/* ========== 返回顶部 ========== */
-.greedy-nav__toggle:hover {
-  background: #eff6ff;
-  color: #2563eb;
-}
-
-/* ========== 响应式：移动端优化 ========== */
-@media (max-width: 768px) {
-  .archive__item {
-    padding: 16px;
-  }
-  
-  .author__avatar img {
-    width: 90px;
-    height: 90px;
-  }
-}
-/* ========== 导航栏精致化 ========== */
-
-.masthead {
-  /* 圆角胶囊形状 */
-  border-radius: 0 0 16px 16px;
-  
-  /* 更强的毛玻璃 */
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  
-  /* 更柔和的阴影 */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-  
-  /* 上下内边距，让导航栏更高更有呼吸感 */
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
-/* 导航栏内容居中且限制宽度 */
-.masthead__inner-wrap {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* 导航链接 */
-.greedy-nav a {
-  color: #4b5563;
-  font-weight: 500;
-  font-size: 0.95em;
-  padding: 8px 14px;
-  border-radius: 8px;
-  transition: all 0.25s ease;
-}
-
-/* 链接悬浮：带背景色的 pill 效果 */
-.greedy-nav a:hover {
-  color: #2563eb;
-  background: rgba(37, 99, 235, 0.08);
-}
-
-/* 当前页面高亮 */
-.greedy-nav .visible-links a.active {
-  color: #2563eb;
-  background: rgba(37, 99, 235, 0.1);
-  font-weight: 600;
-}
-
-/* 网站标题 */
-.site-title {
-  font-weight: 700;
-  font-size: 1.25em;
-  color: #111827;
-  letter-spacing: -0.02em;
-}
-
-/* 搜索图标 */
-.search__toggle {
-  color: #6b7280;
-  border-radius: 8px;
-  padding: 8px;
-  transition: all 0.2s;
-}
-
-.search__toggle:hover {
-  color: #2563eb;
-  background: rgba(37, 99, 235, 0.08);
-}
-
-/* ========== 强力压缩 Footer ========== */
-
-.page__footer {
   margin-top: 2em !important;
   padding: 0.8em 0 !important;
-  background: #111827;
 }
 
 .page__footer footer {
@@ -452,22 +258,46 @@ td {
   font-size: 0.8em !important;
   margin: 0 !important;
   padding: 0 !important;
+  color: #6b7280;
 }
 
-/* ========== 导航栏圆角胶囊 ========== */
-
-.masthead {
-  border-radius: 16px !important;
-  margin: 12px auto !important;
-  max-width: 1100px !important;
-  width: calc(100% - 48px) !important;
-  position: relative !important;
-  left: 0 !important;
-  right: 0 !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+.page__footer a {
+  color: #d1d5db;
+  transition: color 0.2s;
 }
 
-.masthead__inner-wrap {
-  border-radius: 16px !important;
-  padding: 8px 24px !important;
+.page__footer a:hover {
+  color: #60a5fa;
+}
+
+/* ========== 按钮 ========== */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn--primary {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.btn--primary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* ========== 返回顶部 ========== */
+.greedy-nav__toggle:hover {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 768px) {
+  .archive__item {
+    padding: 16px;
+  }
 }
